@@ -9,6 +9,9 @@ environment:
     MSYSTEM: MINGW64
     BIT: 64
 
+install:
+  - set PATH=%PATH%;C:\MinGW\bin
+  
 build_script:
   - 'pushd %APPVEYOR_BUILD_FOLDER%'
   - 'make binary'
