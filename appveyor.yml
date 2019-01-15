@@ -10,7 +10,7 @@ environment:
     BIT: 64
 
 install:
-  - set PATH=%PATH%;C:\MinGW\bin
+  - set PATH=%PATH%;C:\%MSYS2_DIR%\%MSYSTEM%\bin;C:\%MSYS2_DIR%\usr\bin;
   
 build_script:
   - 'pushd %APPVEYOR_BUILD_FOLDER%'
