@@ -14,7 +14,7 @@ install:
   
 build_script:
   - 'pushd %APPVEYOR_BUILD_FOLDER%'
-  - 'make binary'
+  - 'mingw32-make binary'
 
 artifacts:
   - path: '*.exe'
