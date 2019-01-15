@@ -11,7 +11,8 @@ environment:
 
 install:
   - set PATH=%PATH%;C:\%MSYS2_DIR%\%MSYSTEM%\bin;C:\%MSYS2_DIR%\usr\bin;
-  - bash -lc "ci/appveyor/install-libdl.sh"
+  - 'pushd %APPVEYOR_BUILD_FOLDER%'
+  - bash -lc "./ci/appveyor/install-libdl.sh"
   
 build_script:
   - 'pushd %APPVEYOR_BUILD_FOLDER%'
