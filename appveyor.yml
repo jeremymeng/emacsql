@@ -11,17 +11,18 @@ environment:
 
 install:
   - set PATH=%PATH%;C:\%MSYS2_DIR%\%MSYSTEM%\bin;C:\%MSYS2_DIR%\usr\bin;
-  - 'git clone https://github.com/dlfcn-win32/dlfcn-win32.git'
-  - 'pushd dlfcn-win32'
-  - './configure'
-  - 'env CC=gcc make'
-  - 'make install'
-  - 'ln -s /mingw/lib/libdl.a /mingw64/lib/libdl.a'
-  - 'popd'
+  - bash -lc "printenv PATH"
+  - bash -lc "git clone https://github.com/dlfcn-win32/dlfcn-win32.git"
+  - bash -lc "pushd dlfcn-win32"
+  - bash -lc "./configure"
+  - bash -lc "'env CC=gcc make"
+  - bash -lc "make install"
+  - bash -lc "ln -s /mingw/lib/libdl.a /mingw64/lib/libdl.a"
+  - bash -lc "popd"
   
 build_script:
-  - 'pushd %APPVEYOR_BUILD_FOLDER%'
-  - 'make binary'
+  - bash -lc "pushd %APPVEYOR_BUILD_FOLDER%"
+  - bash -lc "make binary"
 
 artifacts:
   - path: '*.exe'
