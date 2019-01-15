@@ -1,0 +1,17 @@
+version: 1.0.{build}
+
+environment:
+  matrix:
+  - COMPILER: msys2
+    PLATFORM: x64
+    MSYS2_ARCH: x86_64
+    MSYS2_DIR: msys64
+    MSYSTEM: MINGW64
+    BIT: 64
+
+build_script:
+  - 'pushd %APPVEYOR_BUILD_FOLDER%'
+  - 'make binary'
+
+artifacts:
+  - path: '*.exe'
